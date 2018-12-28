@@ -1,14 +1,14 @@
 {
-  "name": "bufferize",
+  "name": "buffer-reader",
   "version": "0.0.1",
-  "description": "Create a filter that will read data from standard input and output a text + hex output to standard output.",
+  "description": "Zero-dependency filter that will read data from standard input and output a text + hex output to standard output.",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shonie/bufferize.git"
+    "url": "git+https://github.com/shonie/buffer-reader.git"
   },
   "keywords": [
     "cli"
@@ -16,10 +16,10 @@
   "author": "shonie",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shonie/bufferize/issues"
+    "url": "https://github.com/shonie/buffer-reader/issues"
   },
-  "homepage": "https://github.com/shonie/bufferize#readme",
+  "homepage": "https://github.com/shonie/buffer-reader#readme",
   "bin": {
-    "bufferize": "./bin/bufferize.js"
+    "buffer-reader": "./bin/bufferReader.js"
   }
 }
