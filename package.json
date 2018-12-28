@@ -1,0 +1,22 @@
+{
+  "name": "bufferize",
+  "version": "0.0.1",
+  "description": "Create a filter that will read data from standard input and output a text + hex output to standard output.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shonie/bufferize.git"
+  },
+  "keywords": [
+    "cli"
+  ],
+  "author": "shonie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shonie/bufferize/issues"
+  },
+  "homepage": "https://github.com/shonie/bufferize#readme"
+}
