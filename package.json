@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/shonie/bufferize/issues"
   },
-  "homepage": "https://github.com/shonie/bufferize#readme"
+  "homepage": "https://github.com/shonie/bufferize#readme",
+  "bin": {
+    "bufferize": "./bin/bufferize.js"
+  }
 }
