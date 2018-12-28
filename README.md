@@ -3,6 +3,7 @@ Create a filter that will read data from standard input and output a text + hex 
 
 ### Install
 npm: `npm i --save buffer-reader`
+
 yarn: `yarn add buffer-reader`
 
 ### Usage
