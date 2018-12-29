@@ -17,11 +17,17 @@ module.exports = class BufferReader extends Readable {
     if (this.offset > this.buffer.length) {
       // End reading
       this.push(null);
+
+      return null;
     } else {
       // Reading
-      this.push(this.buffer.slice(this.offset, size));
+      const slice = this.buffer.slice(this.offset, size);
+
+      this.push(slice);
 
       this.offset += size;
+
+      return slice;
     }
   }
 };

@@ -4,7 +4,10 @@
   "description": "Zero-dependency filter that will read data from standard input and output a text + hex output to standard output.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "mocha": "mocha",
+    "test": "npm run test:unit && npm run test:benchmarks",
+    "test:unit": "npm run mocha",
+    "test:benchmarks": "node ./benchmarks/BufferReader.benchmark.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +24,10 @@
   "homepage": "https://github.com/shonie/buffer-reader#readme",
   "bin": {
     "buffer-reader": "./bin/bufferReader.js"
+  },
+  "devDependencies": {
+    "benchmark": "^2.1.4",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
   }
 }
