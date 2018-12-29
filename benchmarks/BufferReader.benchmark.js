@@ -39,13 +39,12 @@ suite
     writableStream.write(massiveBuffer);
   })
   .add("Pipe method", () => {
-    const chunk = reader._read(16384);
-
-    if (chunk) {
+    let chunk;
+    while ((chunk = reader._read(16384))) {
       otherWritableSteam.write(chunk);
-    } else {
-      otherWritableSteam.end();
     }
+
+    otherWritableSteam.end();
   })
   .on("cycle", event => {
     console.log(String(event.target));
