@@ -1,6 +1,6 @@
 {
   "name": "bufferized",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "Zero-dependency filter that will read data from standard input and output a text + hex output to standard output.",
   "main": "index.js",
   "scripts": {

@@ -15,7 +15,7 @@ const reader = new BufferReader({
   buffer: Buffer.from('Pamela Anderson')
 });
 
-reader.pipe(process.stdout); // Pamela Anderson | 50 61 6d 65 6c 61 20 41 6e 64 65 72 73 6f 6e
+reader.pipe(process.stdout); // Pamela Anderson | 50616d656c6120416e646572736f6e
 ```
 
 With commonjs:
@@ -26,10 +26,10 @@ const reader = new BufferReader({
   buffer: Buffer.from('Blue train')
 });
 
-reader.pipe(process.stdout); // Blue train | 42 6c 75 65 20 74 72 61 69 6e
+reader.pipe(process.stdout); // Blue train | 426c756520747261696e
 ```
 
 From CLI:
 ```bash
-echo "Subwoofer" | npx bufferized # Subwoofer | 53 75 62 77 6f 6f 66 65 72
+echo "Subwoofer" | npx bufferized # Subwoofer | 537562776f6f666572
 ```
