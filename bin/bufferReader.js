@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const BufferReader = require("./BufferReader");
+const BufferReader = require("../BufferReader");
 
 let buffer = Buffer.from("");
 

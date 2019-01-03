@@ -1,4 +1,5 @@
 const { expect } = require("chai");
+const { Readable } = require('stream');
 const BufferReader = require("../BufferReader");
 
 describe("BufferReader", () => {
@@ -7,7 +8,7 @@ describe("BufferReader", () => {
       buffer: Buffer.from("Foo")
     });
 
-    expect(reader).to.be.an.instanceof(require('stream').Readable);
+    expect(reader).to.be.an.instanceof(Readable);
   })
   it("Should emit buffer data when reading", () => {
     let reader = new BufferReader({
