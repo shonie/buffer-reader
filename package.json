@@ -7,11 +7,13 @@
     "mocha": "mocha",
     "test": "npm run test:unit && npm run test:benchmarks",
     "test:unit": "npm run mocha",
-    "test:benchmarks": "node ./benchmarks/BufferReader.benchmark.js"
+    "test:benchmarks": "node ./benchmarks/BufferReader.benchmark.js",
+    "test:cli": "npm run lorem-ipsum | ./bin/cli.js",
+    "lorem-ipsum": "lorem-ipsum --units words --count 1000000"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shonie/buffer-reader.git"
+    "url": "git+https://github.com/shonie/bufferized.git"
   },
   "keywords": [
     "cli"
@@ -19,15 +21,16 @@
   "author": "shonie",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shonie/buffer-reader/issues"
+    "url": "https://github.com/shonie/bufferized/issues"
   },
-  "homepage": "https://github.com/shonie/buffer-reader#readme",
+  "homepage": "https://github.com/shonie/bufferized#readme",
   "bin": {
-    "buffer-reader": "./bin/bufferReader.js"
+    "bufferized": "./bin/cli.js"
   },
   "devDependencies": {
     "benchmark": "^2.1.4",
     "chai": "^4.2.0",
+    "lorem-ipsum": "^1.0.6",
     "mocha": "^5.2.0"
   }
 }

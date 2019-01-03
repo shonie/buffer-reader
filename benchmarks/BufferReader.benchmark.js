@@ -15,8 +15,6 @@ const getDummyWritableStream = () =>
     }
   });
 
-const suite = new Suite();
-
 const writableStream = getDummyWritableStream();
 
 const otherWritableSteam = getDummyWritableStream();
@@ -34,7 +32,7 @@ const reader = new BufferReader({
   buffer: massiveBuffer
 });
 
-suite
+new Suite()
   .add("Plain write", () => {
     writableStream.write(massiveBuffer);
   })

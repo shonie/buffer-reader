@@ -16,7 +16,7 @@ const collectOutput = stream =>
   });
 
 describe("cli", function() {
-  this.timeout(10000000);
+  this.timeout(10000);
 
   it("Output is correct", async () => {
     const echo = spawn("echo", ["Hello, world!"]);
