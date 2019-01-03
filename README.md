@@ -31,5 +31,5 @@ reader.pipe(process.stdout); // Blue train | 42 6c 75 65 20 74 72 61 69 6e
 
 From CLI:
 ```bash
-echo "Subwoofer" | npm run bufferized # Subwoofer | 53 75 62 77 6f 6f 66 65 72
+echo "Subwoofer" | npx bufferized # Subwoofer | 53 75 62 77 6f 6f 66 65 72
 ```
