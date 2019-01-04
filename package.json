@@ -8,7 +8,7 @@
     "test": "npm run test:unit && npm run test:benchmarks",
     "test:unit": "mocha --colors",
     "test:benchmarks": "node ./benchmarks/BufferReader.benchmark.js",
-    "test:cli": "npm run lorem-ipsum | ./bin/cli.js",
+    "test:cli": "npm run lorem-ipsum | NODE_NO_WARNINGS=1 ./bin/cli.js",
     "lorem-ipsum": "lorem-ipsum --units words --count 10"
   },
   "repository": {
@@ -44,7 +44,8 @@
   },
   "dependencies": {
     "@rauschma/stringio": "^1.4.0",
-    "ramda": "^0.26.1"
+    "ramda": "^0.26.1",
+    "window-size": "^1.1.1"
   },
   "engines": {
     "node": ">=11.6.0"
