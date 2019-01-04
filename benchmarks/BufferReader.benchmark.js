@@ -1,8 +1,8 @@
-const { Suite } = require("benchmark");
-const { Writable } = require("stream");
-const fs = require("fs");
-const path = require("path");
-const BufferReader = require("../lib/BufferReader");
+const { Suite } = require('benchmark');
+const { Writable } = require('stream');
+const fs = require('fs');
+const path = require('path');
+const BufferReader = require('../lib/BufferReader');
 
 const getDummyWritableStream = () =>
   new Writable({
@@ -12,26 +12,24 @@ const getDummyWritableStream = () =>
       } catch (err) {
         cb(err);
       }
-    }
+    },
   });
 
 const writableStream = getDummyWritableStream();
 
 const otherWritableSteam = getDummyWritableStream();
 
-const buffer = fs.readFileSync(
-  path.join(__dirname, "..", "fixtures", "1Gb.txt")
-);
+const buffer = fs.readFileSync(path.join(__dirname, '..', 'fixtures', '1Gb.txt'));
 
 const reader = new BufferReader({
-  buffer
+  buffer,
 });
 
 new Suite()
-  .add("Plain write", () => {
+  .add('Plain write', () => {
     writableStream.write(buffer);
   })
-  .add("Pipe method", () => {
+  .add('Pipe method', () => {
     let chunk;
     while ((chunk = reader._read(16384))) {
       otherWritableSteam.write(chunk);
@@ -39,10 +37,10 @@ new Suite()
 
     otherWritableSteam.end();
   })
-  .on("cycle", event => {
+  .on('cycle', event => {
     console.log(String(event.target));
   })
-  .on("complete", function() {
-    console.log(`Fastest is ${this.filter("fastest").map("name")}`);
+  .on('complete', function() {
+    console.log(`Fastest is ${this.filter('fastest').map('name')}`);
   })
   .run({ async: true });
