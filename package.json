@@ -2,22 +2,20 @@
   "name": "bufferized",
   "version": "0.0.5",
   "description": "Zero-dependency filter that will read data from standard input and output a text + hex output to standard output.",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "mocha": "mocha",
     "test": "npm run test:unit && npm run test:benchmarks",
     "test:unit": "npm run mocha",
     "test:benchmarks": "node ./benchmarks/BufferReader.benchmark.js",
     "test:cli": "npm run lorem-ipsum | ./bin/cli.js",
-    "lorem-ipsum": "lorem-ipsum --units words --count 1000000"
+    "lorem-ipsum": "lorem-ipsum --units words --count 10"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/shonie/bufferized.git"
   },
-  "keywords": [
-    "cli"
-  ],
+  "keywords": ["cli"],
   "author": "shonie",
   "license": "MIT",
   "bugs": {
@@ -31,6 +29,20 @@
     "benchmark": "^2.1.4",
     "chai": "^4.2.0",
     "lorem-ipsum": "^1.0.6",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-react": "^7.11.1",
+    "prettier": "^1.15.3"
+  },
+  "dependencies": {
+    "@rauschma/stringio": "^1.4.0"
+  },
+  "engines": {
+    "node": ">=11.6.0"
   }
 }

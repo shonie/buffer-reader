@@ -1,18 +1,28 @@
 #!/usr/bin/env node
 
-const BufferReader = require("../BufferReader");
+const parseStdin = require('../lib/parseStdin');
+const { splitIntoLines } = require('../lib/layout');
 
-let buffer = Buffer.from("");
+async function main() {
+  const { stdin, stdout } = process;
 
-process.stdin.on("data", chunk => {
-  buffer = Buffer.concat([buffer, Buffer.from(chunk)]);
-});
+  stdin.setEncoding('utf8');
 
-process.stdin.pipe(process.stdout);
+  for await (const [utf8, hex] of parseStdin(process.stdin)) {
+    const columnWidth = stdout.columns / 2;
 
-process.stdin.on("end", () => {
-  const opts = {
-    buffer
-  };
-  new BufferReader(opts).setEncoding("hex").pipe(process.stdout);
-});
+    const columns = [
+      {
+        value: utf8,
+        width: columnWidth,
+      },
+      { value: hex, width: columnWidth },
+    ];
+
+    for await (const line of splitIntoLines(columns)) {
+      stdout.write(line);
+    }
+  }
+}
+
+main();

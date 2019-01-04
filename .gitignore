@@ -77,3 +77,6 @@ typings/
 .fusebox/
 # DynamoDB Local files
 .dynamodb/
+
+# OS-X fs specifi
+.DS_Store

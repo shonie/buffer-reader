@@ -1,6 +1,6 @@
 const { expect } = require("chai");
 const { Readable } = require('stream');
-const BufferReader = require("../BufferReader");
+const BufferReader = require("../lib/BufferReader");
 
 describe("BufferReader", () => {
   it("Should be a valid readable stream", () => {

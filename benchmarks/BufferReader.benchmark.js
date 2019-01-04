@@ -2,7 +2,7 @@ const { Suite } = require("benchmark");
 const { Writable } = require("stream");
 const fs = require("fs");
 const path = require("path");
-const BufferReader = require("../BufferReader");
+const BufferReader = require("../lib/BufferReader");
 
 const getDummyWritableStream = () =>
   new Writable({
@@ -19,22 +19,17 @@ const writableStream = getDummyWritableStream();
 
 const otherWritableSteam = getDummyWritableStream();
 
-const massiveText = fs.readFileSync(
-  path.join(__dirname, "..", "fixtures", "PamelaAnderson.txt"),
-  {
-    encoding: "utf8"
-  }
+const buffer = fs.readFileSync(
+  path.join(__dirname, "..", "fixtures", "1Gb.txt")
 );
 
-const massiveBuffer = Buffer.from(massiveText);
-
 const reader = new BufferReader({
-  buffer: massiveBuffer
+  buffer
 });
 
 new Suite()
   .add("Plain write", () => {
-    writableStream.write(massiveBuffer);
+    writableStream.write(buffer);
   })
   .add("Pipe method", () => {
     let chunk;
@@ -47,7 +42,7 @@ new Suite()
   .on("cycle", event => {
     console.log(String(event.target));
   })
-  .on("complete", () => {
-    console.log(`Fastest is ${suite.filter("fastest").map("name")}`);
+  .on("complete", function() {
+    console.log(`Fastest is ${this.filter("fastest").map("name")}`);
   })
   .run({ async: true });
