@@ -9,7 +9,7 @@
     "test:unit": "mocha --colors",
     "test:benchmarks": "node ./benchmarks/BufferReader.benchmark.js",
     "test:cli": "npm run lorem-ipsum | NODE_NO_WARNINGS=1 ./bin/cli.js",
-    "lorem-ipsum": "lorem-ipsum --units words --count 10"
+    "lorem-ipsum": "lorem-ipsum --units words --count 40"
   },
   "repository": {
     "type": "git",
