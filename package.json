@@ -5,11 +5,10 @@
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint ./",
-    "test": "npm run test:unit && npm run test:benchmarks",
+    "test": "npm run test:unit",
     "test:unit": "mocha --colors",
-    "test:benchmarks": "node ./benchmarks/BufferReader.benchmark.js",
     "test:cli": "npm run lorem-ipsum | NODE_NO_WARNINGS=1 ./bin/cli.js",
-    "lorem-ipsum": "lorem-ipsum --units words --count 40"
+    "lorem-ipsum": "lorem-ipsum --units words --count 100"
   },
   "repository": {
     "type": "git",
@@ -28,7 +27,6 @@
     "bufferized": "./bin/cli.js"
   },
   "devDependencies": {
-    "benchmark": "^2.1.4",
     "chai": "^4.2.0",
     "eslint": "^5.9.0",
     "eslint-config-airbnb": "^17.1.0",
@@ -43,7 +41,6 @@
     "prettier": "^1.15.3"
   },
   "dependencies": {
-    "@rauschma/stringio": "^1.4.0",
     "ramda": "^0.26.1",
     "window-size": "^1.1.1"
   },
